@@ -15,6 +15,11 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
+            //creamos el campo name en la tabla de categorias
+            $table->string('name',128);
+            //creamos el campo slug en la tabla de categorias
+            $table->string('slug',128)->unique();//no se podra repetir en la tabla
+            $table->mediumText('body')->nullable();//un campo para el body 
             $table->timestamps();
         });
     }
