@@ -9,7 +9,7 @@ class Post extends Model
 	//guardar datos de formna masiva
 	protected $fillable = [
 		'user_id','category_id','name','slug','excerpt','body','status','file'
-	]
+	];
 
 	//relacion de usarios
 	public function user(){
