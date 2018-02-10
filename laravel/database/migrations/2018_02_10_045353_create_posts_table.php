@@ -26,10 +26,10 @@ class CreatePostsTable extends Migration
             $table->string('file',128)->nullable();//el archivo de imagen 
             $table->timestamps();
 
-                //relaciones
+                //relaciones usuarios y categorias
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->onUpdate('cascade'); //se eliminan los post tambien de ese usuario
 
             $table->foreign('category_id')->references('id')->on('categories')
             ->onDelete('cascade')
